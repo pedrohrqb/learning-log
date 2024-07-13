@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from .models import Topic
-from .forms import TopicForm
+from .forms import TopicForm, EntryForm
 from django.http import HttpResponseRedirect
 from django.urls import reverse
 
@@ -36,3 +36,7 @@ def new_topic(request):
             return HttpResponseRedirect(reverse('topics'))
     contexto = {'form': form}
     return render(request, 'learning_logs/new_topic.html', contexto)
+
+def new_entry(request, topic_id):
+    """Acrescenta uma nova entrada para um assunto em particular."""
+    t
