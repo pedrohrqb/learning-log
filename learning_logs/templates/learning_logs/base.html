@@ -6,9 +6,19 @@
     <title>BASE</title>
 </head>
 <body>
-    <a href="{% url 'index' %}">Learning Log</a> -
-    <a href="{% url 'topics' %}">Tópicos</a>
-    {% block content%} {% endblock content%}
+    <p>
+        <a href="{% url 'index' %}">Learning Log</a> -
+        <a href="{% url 'topics' %}">Tópicos</a>
 
+        {% if user.is_authenticated %}
+            Olá, {{ user.username }}
+        {% else %}
+            <a href="{% url 'login' %}">Entrar</a>
+
+        {% endif %}
+    </p>
+
+    
+    {% block content%} {% endblock content%}
 </body>
 </html>
