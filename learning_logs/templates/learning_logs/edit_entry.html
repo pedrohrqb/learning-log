@@ -16,7 +16,8 @@
     <form action="{% url 'edit_entry' entry.id %}" method="post">
         {% csrf_token %}
         {{ form.as_p }}
-        <button name="submit">Salvar</button>
+        <button name="submit">Salvar</button> 
+        <button name="excluir">Deletar Anotação</button>
     </form>
 
     {% endblock content %}
